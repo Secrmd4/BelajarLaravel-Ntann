@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      */
@@ -97,7 +102,7 @@ class PostController extends Controller
         $post->judul_post = $request['judul_post'];
         $post->isi_post = $request['isi_post'];
         $post->gambar_post = $path;
-        $post->Save();
+        $post->save();
 
         return redirect('/home');
     }

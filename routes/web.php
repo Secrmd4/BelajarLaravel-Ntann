@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -14,15 +15,11 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/', function () {
-    return view('editstts');
-});
+Auth::routes();
 
-Route::get('/home', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/home', [PostController::class, 'index'])->name('home');
 Route::get('/create', [PostController::class, 'create']);
 Route::post('/saveblog', [PostController::class, 'store']);
 Route::get('/editstts/{id}', [PostController::class, 'edit']);

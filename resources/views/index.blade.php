@@ -30,7 +30,7 @@
                 <h4 class="card-title fw-bold">{{ $posts->judul_post}}</h4>
                 <p class="card-text">{{ $posts->isi_post}}</p>
                 <p class="card-text">
-                <small class="text-body-secondary">I{{ $posts->penulis_post }}</small> <a href="" class="btn"><i class="bi bi-heart"></i> like</a> <a href="" class="btn"><i class="bi bi-chat-text"></i>Comment</a></p>
+                <small class="text-body-secondary">{{ $posts->penulis_post }}</small> <a href="" class="btn"><i class="bi bi-heart"></i> like</a> <a href="" class="btn"><i class="bi bi-chat-text"></i>Comment</a></p>
               </div>
             </div>
           </div>
